@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>card details form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="cont">
+      <img src="images/bg-main-desktop.png" class="bg-d" />
+      <img src="images/bg-main-mobile.png" class="bg-m" />
+      <div class="conte">
+        <div class="form">
+          <label for="">Cardholder Name</label><br />
+          <input type="text" placeholder="e.g. Jane Appleseed" class="name" oninput="show_n()" onclick="fc_show()"/>
+          <br />
+          <span class="no-name"></span>
+          <br />
+          <label for="">Card Number</label><br />
+          <input
+            type="text"
+            placeholder=" e.g. 1234 5678 9123 0000"
+            class="number"
+            maxlength="16"
+            onkeypress="isInputNumber(event)"
+            oninput="show_num()"
+            onclick="fc_show()"
+          />
+          <br />
+          <span class="no-number"></span>
+          <br />
+          <div class="date">
+            <div>
+              <label>Exp. Date (MM/YY)</label><br />
+              <input
+                type="text"
+                placeholder="MM"
+                class="m"
+                maxlength="2"
+                minlength="1"
+                onkeypress="isInputNumber(event)"
+                oninput="show_m()"
+                onclick="fc_show()"
+              />
+              <input
+                type="text"
+                placeholder="YY"
+                class="y"
+                maxlength="2"
+                minlength="2"
+                onkeypress="isInputNumber(event)"
+                oninput="show_y()"
+                onclick="fc_show()"
+              />
+              <br />
+              <span class="no-date"></span>
+            </div>
+            <div>
+              <label>CVC</label><br />
+              <input
+                type="text"
+                placeholder="123"
+                class="cvc"
+                maxlength="3"
+                onkeypress="isInputNumber(event)"
+                oninput="show_cvc()"
+                onclick="bc_show()"
+              />
+              <br />
+              <span class="no-cvc"></span>
+            </div>
+          </div>
+          <button class="btn" onclick="e()">Confirm</button>
+        </div>
+        <div class="complete">
+          <img src="images/icon-complete.svg" />
+          <p class="header">THANK YOU!</p>
+          <p class="sub-header">We've added your card details</p>
+          <button class="btn" onclick="v()">Continue</button>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="abs-fc">
+          <div class="rel-fc">
+            <img src="images/bg-card-front.png" class="fc" />
+            <p class="show-number-fc">0000 0000 0000 0000</p>
+            <p class="show-name-fc">Jane Appleseed</p>
+            <p class="show-date-fc">
+              <span class="show-m-fc">--</span>/<span class="show-y-fc">--</span>
+            </p>
+            <img src="images/card-logo.svg" class="logo-fc" />
+          </div>
+        </div>
+        <div class="abs-bc">
+          <div class="rel-bc">
+            <img src="images/bg-card-back.png" class="bc" />
+            <p class="show-cvc-bc">123</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="code.js"></script>
+  </body>
+</html>
